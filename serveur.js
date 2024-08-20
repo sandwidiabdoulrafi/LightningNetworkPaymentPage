@@ -11,6 +11,7 @@ app.post('/submit',(req, res) =>{
     const getData = req.body;
     res.send('donnée recu');
 });
+
 app.listen(8808, ()=>{
     console.log('le serveur fonctionne avec le port 8808');
 })

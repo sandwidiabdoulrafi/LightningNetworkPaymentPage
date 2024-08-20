@@ -123,15 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Envoi des informations
     sendInfo.addEventListener('click', function() {
-
-        // email
-        const msgEmail = document.querySelector('.msgEmail');
-        const [IsValidEmail,verifEmail] = verificationEmail(email,msgEmail);
-        
-        // Adresse Wallet
-        
-        const [IsValidWallet, validWallet] = verifiWallet(destiWallet);
-        
         // Saisie du nom
         const msgName = document.querySelector('.msgName');
 
@@ -144,10 +135,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Saisie du motif
         const msgMotif = document.querySelector('.msgMotif');
         const [IsValidDescription, verifDescription] = verificationInput(description,msgMotif);
+        // email
+        const msgEmail = document.querySelector('.msgEmail');
+        const [IsValidEmail,verifEmail] = verificationEmail(email,msgEmail);
+        
+        // Adresse Wallet
+        
+        const [IsValidWallet, validWallet] = verifiWallet(destiWallet);
         
         // Verification du choix de payement
         const isValidInput =[IsValidEmail,IsValidWallet,IsValidUserName,IsValidUserLastname,IsValidDescription]
         console.log('isValidInput:', isValidInput);
+        
         
         function validInput(isValidInput){
             for(let i=0; i<isValidInput.length;i++){
